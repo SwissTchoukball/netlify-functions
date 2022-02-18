@@ -2,8 +2,8 @@ import { Handler } from "@netlify/functions";
 import fetch from "node-fetch";
 
 const standingEndpoints = {
-  leagueA: process.env.LEVERADE_LEAGUE_A_STANDING_ENDPOINT,
-  leagueB: process.env.LEVERADE_LEAGUE_B_STANDING_ENDPOINT,
+  "league-a": process.env.LEVERADE_LEAGUE_A_STANDING_ENDPOINT,
+  "league-b": process.env.LEVERADE_LEAGUE_B_STANDING_ENDPOINT,
 };
 
 interface LeveradeStandings {
