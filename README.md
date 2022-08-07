@@ -4,6 +4,7 @@
 
 This repository currently contains a single Netlify function.
 
+
 ## `simple-standings`
 
 This function retrieve a competition standings from Leverade a process it to return a simplified JSON of it.
