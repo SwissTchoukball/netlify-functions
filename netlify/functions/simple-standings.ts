@@ -4,6 +4,7 @@ import fetch from "node-fetch";
 const standingEndpoints = {
   "league-a": process.env.LEVERADE_LEAGUE_A_STANDING_ENDPOINT,
   "league-b": process.env.LEVERADE_LEAGUE_B_STANDING_ENDPOINT,
+  "league-b-geneva": process.env.LEVERADE_LEAGUE_B_GENEVA_STANDING_ENDPOINT,
 };
 
 interface LeveradeStandings {
