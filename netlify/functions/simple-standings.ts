@@ -30,16 +30,23 @@ const getStat = (stats: { type: string; value: number }[], type: string) => {
 };
 
 const handler: Handler = async (event, context) => {
+  const requestedGroupId: string = event.queryStringParameters.groupId;
   const requestedCompetition: string = event.queryStringParameters.competition;
 
-  if (!requestedCompetition) {
+  if (!requestedCompetition && !requestedGroupId) {
     return {
       statusCode: 400,
       body: "No competition specified",
     };
   }
 
-  const standingEndpoint = standingEndpoints[requestedCompetition];
+  let standingEndpoint: string;
+
+  if (requestedGroupId) {
+    standingEndpoint = `https://api.leverade.com/groups/${requestedGroupId}/standings`;
+  } else {
+    standingEndpoint = standingEndpoints[requestedCompetition];
+  }
 
   if (!standingEndpoint) {
     return {
